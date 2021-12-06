@@ -1,14 +1,14 @@
-![reliability](reliability.svg) 
-![maintainability](maintainability.svg)
-![security](security.svg)
-![vulnerabilities](vulnerabilities.svg)
+![reliability](https://github.com/MaslovDenis/linux-pam-module-with-approval-via-telegram/raw/main/media/reliability.svg) 
+![maintainability](https://github.com/MaslovDenis/linux-pam-module-with-approval-via-telegram/raw/main/media/maintainability.svg)
+![security](https://github.com/MaslovDenis/linux-pam-module-with-approval-via-telegram/raw/main/media/security.svg)
+![vulnerabilities](https://github.com/MaslovDenis/linux-pam-module-with-approval-via-telegram/raw/main/media/vulnerabilities.svg)
 
-![quality gate](quality_gate.svg)
+![quality gate](https://github.com/MaslovDenis/linux-pam-module-with-approval-via-telegram/raw/main/media/quality_gate.svg)
 # Linux pam module with approval via telegram 
 
 Authorization module using ssh keys and confirmation of entry in the telegram.
 
-![demo](demo.gif)
+![demo](https://github.com/MaslovDenis/linux-pam-module-with-approval-via-telegram/raw/main/media/demo.gif)
 
 
 ## !!! WARNING: 

@@ -4,6 +4,7 @@ import socket
 import json
 import pyotp
 import base64
+import select
 
 
 otp_secret = 'Your encrypted OTP secret'
@@ -39,7 +40,19 @@ def get_approve(pamh, user, group_name, server_ip, server_port):
             client.send(bytes(json.dumps(data)))
 
             """ getting a response """
-            data = client.recv(1024)
+            ready = select.select([client], [], [], 60)
+
+            if ready[0]:
+                data = client.recv(1024)
+            else:
+                """ If approver is not available, the MFA login is used """
+                """ We receive the entered MFA code by the user """
+                resp = pamh.conversation(pamh.Message(pamh.PAM_PROMPT_ECHO_ON, "Enter one time PIN: "))
+
+                """ Checking the MFA code entered by the user """
+                if (pyotp.TOTP(decrypt(otp_secret).decode()).now()) == resp.resp:
+                    return pamh.PAM_SUCCESS
+                return pamh.PAM_ABORT
 
             if data == 'Approve':
                 auth_log("Access approved")

@@ -1,0 +1,24 @@
+name: Blue-green_deployment
+on:
+  workflow_dispatch:
+
+jobs:
+     
+ 
+  Update_APP_node1:
+    runs-on: ubuntu-latest
+    steps:   
+    - name: Update APP node1
+      run: |
+        echo "Update APP node1"
+        exit 1
+        echo 2
+        
+  Update_APP_node2:
+    runs-on: ubuntu-latest
+    steps:   
+    - name: Update APP node1
+      run: |
+        echo "Update APP node1"
+        exit 1
+        echo 2
